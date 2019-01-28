@@ -19,7 +19,6 @@ export class AppComponent {
   constructor() {
     this.loadTodos();
   }
-  title = 'clean-architecture-todo-angular';
 
   async loadTodos() {
     this.todoList = await todoInteractor.getTodoList();
@@ -31,5 +30,17 @@ export class AppComponent {
 
   async toggleTodo(todo: Todo.Todo) {
     this.todoList = await todoInteractor.toggleTodo(this.todoList, todo);
+  }
+
+  isTodoDone(todo: Todo.Todo) {
+    return Todo.isDone(todo);
+  }
+
+  getTodoTitle(todo: Todo.Todo) {
+    return Todo.title(todo);
+  }
+
+  getTodoAge(todo: Todo.Todo) {
+    return Todo.age(todo);
   }
 }

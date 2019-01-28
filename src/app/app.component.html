@@ -1,9 +1,9 @@
 <div style="text-align:center">
   <input [(ngModel)]="todoTitle" placeholder="title">
-  <button (click)="addTodo">Add TODO</button>
-  <div *ngFor="let todo of todoList">
-    <span>{{todo.title}}</span>
-    <span></span>
-    <span></span>
+  <button (click)="addTodo()">Add TODO</button>
+  <div *ngFor="let todo of todoList" (click)="toggleTodo(todo)">
+    <span>[{{isTodoDone(todo) ? "x" : ""}}] </span>
+    <span>{{getTodoTitle(todo)}}</span>
+    <span>- {{getTodoAge(todo)}}</span>
   </div>
 </div>
