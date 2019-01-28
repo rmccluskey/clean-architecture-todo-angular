@@ -1,4 +1,5 @@
 <div style="text-align:center">
+  <div>I'm an Angular TodoList</div>
   <input [(ngModel)]="todoTitle" placeholder="title">
   <button (click)="addTodo()">Add TODO</button>
   <div *ngFor="let todo of todoList" (click)="toggleTodo(todo)">
