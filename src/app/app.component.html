@@ -5,5 +5,6 @@
     <span>[{{isTodoDone(todo) ? "x" : ""}}] </span>
     <span>{{getTodoTitle(todo)}}</span>
     <span>- {{getTodoAge(todo)}}</span>
+    <span (click)="removeTodo(todo)"> X</span>
   </div>
 </div>

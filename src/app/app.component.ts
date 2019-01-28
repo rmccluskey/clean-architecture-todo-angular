@@ -28,6 +28,10 @@ export class AppComponent {
     this.todoList = await todoInteractor.addTodo(this.todoList, this.todoTitle);
   }
 
+  async removeTodo(todo: Todo.Todo) {
+    this.todoList = await todoInteractor.removeTodo(this.todoList, todo);
+  }
+
   async toggleTodo(todo: Todo.Todo) {
     this.todoList = await todoInteractor.toggleTodo(this.todoList, todo);
   }
