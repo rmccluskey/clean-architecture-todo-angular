@@ -25,7 +25,11 @@ export class AppComponent {
   }
 
   async addTodo() {
-    this.todoList = await todoInteractor.addTodo(this.todoList, this.todoTitle);
+    try {
+      this.todoList = await todoInteractor.addTodo(this.todoList, this.todoTitle);
+    } catch (e) {
+      alert(e);
+    }
   }
 
   async removeTodo(todo: Todo.Todo) {
